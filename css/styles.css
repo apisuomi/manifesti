@@ -3,6 +3,13 @@ body{
   margin: 0;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Override*/
+div.navbar-header {
+  background-color:#f35d3a;
+
+}
+
 a{
 /*  color: #1b8be0;*/
   color: #346073;
