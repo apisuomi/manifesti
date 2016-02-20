@@ -906,6 +906,11 @@ ul.address {
   font-size:20px;
 }
 
+ul.address li {
+
+  margin: 10px 0;
+
+}
 
 .contact-info ul li {
   margin-bottom: 8px;
