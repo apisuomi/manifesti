@@ -142,7 +142,7 @@ section {
 }
 
 #home-slider .caption h1 {
-  color: #fff;
+  color: #f35d3a;
   font-size: 60px;
   font-weight: 700;
   margin-bottom: 30px;
@@ -153,7 +153,7 @@ section {
   font-size: 14px;
   font-weight: 600;
   padding:14px 40px;
-  border: 1px solid #6e6d6c;
+  border: 1px solid #f35d3a;
   border-radius: 4px;
   margin-top: 40px;
 }
