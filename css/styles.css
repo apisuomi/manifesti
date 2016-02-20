@@ -4,7 +4,8 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 a{
-  color: #1b8be0;
+/*  color: #1b8be0;*/
+  color: #346073;
 }
 a:hover{
   text-decoration: none;
