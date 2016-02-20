@@ -903,7 +903,9 @@ ul.address {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-size:20px;
 }
+
 
 .contact-info ul li {
   margin-bottom: 8px;
