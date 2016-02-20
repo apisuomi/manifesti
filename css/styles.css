@@ -4,14 +4,6 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-div.manifesti p{
-
-  padding-left:30px;
-  border:left: solid 1px #000;
-
-}
-
-
 a{
 /*  color: #1b8be0;*/
   color: #346073;
