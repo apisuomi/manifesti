@@ -592,7 +592,8 @@ section {
 }
 
 .member-info h3 span {
-  line-height:1;
+  line-height: 90%;
+  color: #646464;
 }
 
 
