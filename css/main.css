@@ -583,6 +583,7 @@ section {
 .member-info h3 {
   margin-top: 35px;
   min-height: 130px;
+border:none;
 }
 
 .member-info h4,
