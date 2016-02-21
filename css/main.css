@@ -1039,5 +1039,5 @@ div.manifesti p{
   font-size:24px;
   margin-left:50px;
   padding:30px;
-  
+  border-left: 10px solid #ccc;  
 }
