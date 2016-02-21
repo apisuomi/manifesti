@@ -591,6 +591,10 @@ section {
   color: #999;
 }
 
+.member-info h3 span {
+  line-height:1.5;
+}
+
 
 /*************************
 *******Features CSS*******
