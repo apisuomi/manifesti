@@ -1034,3 +1034,10 @@ div.manifesti p{
 .comment p {
   display: inline;
 }
+
+#fokus {
+  font-size:24px;
+  margin-left:50px;
+  padding:30px;
+  
+}
