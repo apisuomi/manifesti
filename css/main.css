@@ -179,6 +179,7 @@ section {
 
 .caption p {
   font-size:34px;
+  line-height:110%;
 }
 
 .carousel-fade .carousel-inner .item {
