@@ -1,36 +1,452 @@
----
-layout: layout
-title: "Main"
----
-	
-<div class="content">
-	<h2>I wrote</h2>
-	<div class="related">
-	  <ul>
-	  {% for post in site.posts %}
-	    <li>
-	      <span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
-	    </li>
-	  {% endfor %}
-	  </ul>
-	</div>
-<!--		
-<div id="post">
-{% for post in site.posts limit:1 %}
-<h1><a href="{{ post.url }}">Last post on {{ post.date | date: "%B %e, %Y" }} : {{ post.title }}</a></h1>
- {{ post.content }}
- <br>
-{% endfor %}
-</div>
--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="API-manifesti - 7 teesiä API-talouden edistämiseen Suomessa nyt ja tulevaisuudessa">
+  <meta name="author" content="Jarkko Moilanen">
+  <title>API-manifesti - 7 teesiä API-talouden edistämiseen Suomessa nyt ja tulevaisuudessa | API:Suomi</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet"> 
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
 
-<h2>Some Links</h2>
-<div class="related">
-<ul>
-	<li>
-		<a href="http://twitter.com/{{ site.twitter }}">Tweeeeeeeeet!</a>
-	</li>
-</ul>
-</div>
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="images/favicon.ico">
+</head><!--/head-->
 
-</div>
+<body>
+
+  <!--.preloader-->
+  <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
+  <!--/.preloader-->
+
+  <header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image: url(images/slider/social.jpg)">
+          <div class="caption">
+	    <img class="animated fadeInTopBig" src="/images/manifesti-logo.png"></img>
+            <h1 class="animated fadeInLeftBig">API-manifesti</h1>
+            <p class="animated fadeInRightBig">API-talouden vauhdittamiseksi</p>
+	    <a data-scroll class="btn btn-start animated fadeInUpBig" href="#yhteenveto">Tutustu manifestiin!</a>
+
+	    <p class="animated fadeInLeftBig" style="margin-top:30px;"><a href="http://apisuomi.fi"><img src="http://apisuomi.fi/wp-content/uploads/2014/06/apisuomi-small-round.png"/></a><br/></p>
+          </div>
+        </div>
+      <a id="tohash" href="#manifesti"><i class="fa fa-angle-down"></i></a>
+
+    </div><!--/#home-slider-->
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <h1 style="color:#fff;">API-MANIFESTI</h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                 
+            <li class="scroll active"><a href="#home">Alkuun</a></li>
+	    <li class="scroll"><a href="#yhteenveto">Yhteenveto</a></li>
+            <li class="scroll"><a href="#manifesti">Manifesti</a></li>
+	    <li class="scroll"><a href="#team">Kontribuoijat</a></li>                     
+            <li class="scroll"><a href="#contact">Yhteystiedot</a></li>       
+          </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+
+  <section id="yhteenveto" style="margin-top:40px;">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="manifesti">
+            <h2>Yhteenveto</h2>
+
+	    <p>
+	      Tieto on nykyaikaisten palvelujen merkittävä raaka-aine. Maailman eniten arvoa tuottavat yritykset hyödyntävät tietoa tehokkaasti. Myös uudet 
+	      liiketoimintamallit perustuvat yhä useammin tiedon tehokkaaseen hyödyntämiseen palveluprosesseissa. Suomen talouskasvua ja tuottavuutta on 
+	      mahdollista auttaa edistämällä tiedon tehokasta hyödyntämistä sekä teknologian että lainsäädännön keinoin.
+	    </p> 
+
+	    <p>
+	      Ohjelmointirajapinta (Application programming interface, API)  määrittelee, miten ohjelmisto tarjoaa tietoja tai palveluita  sovelluksille tai muille tietojärjestelmille.
+	      Siinä  missä graafinen selaimeen perustuva käyttöliittymä kuten esimerkiksi suomi.fi palvelee ihmisiä,  koneluettava rajapinta palvelee järjestelmiä ja ohjelmistoja.
+	    </p>
+
+	    <p>
+	    Uudet rajapintoihin perustuvat liiketoimintamallit korvaavat vanhoja. Rajapintojen avulla liiketoimintaekosysteemien skaalaus on kaikista tehokkainta ja 
+            sen seuraksena syntyy  API-talous ('API Economy'). Silloin kun API:en tekemiseen käytetään julkista rahaa, niin on ajateltava myös liiketoimintamallia. 
+	    Tulisi olla läsnä ajatus siitä, millaista liiketoimintamallia julkaistava API tukee. Jos liiketoimintamallia ei tunnisteta tai se on hyvin geneerinen, 
+	    niin silloin on mietittävä uudemman kerran kannattaako API:n julkaisuun ja ylläpitoon laittaa rahaa, vai olisiko kyseinen raha hyödyllisemmin käytetty jossain muualla.
+	    Toisaalta voi aloittaa API:n tekemisen sillä, että kertoo aikeestaan ja katsoo onko mistään suunnasta vastakaikua, omasta piiristä voi olla hankala nähdä kaikkea potentiaalia. 
+            </p>
+
+	    <p>
+	    Julkinen sektori ainakin pyrkii pienentämään kulujaan koko ajan. Tämä yhdistettynä rajapintojen laajaan hyödyntämiseen avaa yksityiselle sektorille uusia 
+	    mahdollisuuksia osallistua julkisen sektorin palvelutuotantoon. Suomessa julkisen sektorin "Once  Only"  periaatetta ei voida kustannustehokkaasti 
+            soveltaa ilman laadukkaita rajapintoja.	
+	    </p>
+	    
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#yhteenveto-->
+
+
+
+
+
+
+  <section id="manifesti">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="manifesti">
+            <h2>API-manifesti</h2>
+		<p><small>Versio 1.1 - 26.4.2016</small></p>
+
+	    <h3 style="border:none;">Mikä API-manifesti?</h3>
+	    <p>
+		API-manifestin tarina alkoi syyskuussa 2015, kun Jarkko Moilanen käynnisti API-yhteisössä <a href="https://digipalvelutehdas.hackpad.com/api-strategia">keskustelun API-strategiasta</a>, jonka kantavana 
+		ajatuksena oli löytää joukkoistamalla 5-10 teesiä/toimenpidettä joilla edistetään API-taloutta Suomessa nyt ja tulevaisuudessa. 
+		Ehdotuksia teeseiksi sai ehdottaa kuka tahansa avoimessa hackpadissa.
+            </p>
+
+		<div id="fokus">
+		7 teesiä API-talouden edistämiseen Suomessa nyt ja tulevaisuudessa. 
+		</div>
+
+	    <p> 
+	    <img id="yhteenveto" src="/images/apimanifesti-vrk.png" style="float:right; margin-left:20px; margin-bottom:20px;"/>
+		Sen jälkeen kokoonnuimme Väestörekisterikeskuksessa <a href="http://apisuomi.fi/2015/10/api-talouden-api-manifesti/">20.10.2015</a> miettimään tarkemmin miten edetä ja mihin suuntaan. Päädyimme strategian kirjoitamisen
+		sijasta työstämään API-manifestia. Mika Honkanen valittiin pääeditoriksi ja työskentelyä jatkettiin kaikille avoimessa digipalvelutehtaan
+		hackpadissa.
+	    </p>
+	    <p>
+		API-manifestin työstö jatkui hackpadissa ja pääosa keskustelusta käytiin API:Suomi Facebook -ryhmässä. Joulukuussa manifesti siirrettiin 
+		API:suomi -yhteisön Githubiin ja kehitys jatkui sen jälkeen Github issue-listoja hyväksikäyttäen. Joulukuun viimeisenä päivänä 30.12.2015 
+		julkaistiin ensimmäinen versio API-manifestista. Työ jatkuu edelleen ja jatkokehitys sekä kontribuutiot otetaan vastaan Githubissa.  	
+ 	     </p>
+
+
+	    <h3>1. Palvele digitaalisesti rajapintapalvelun avulla</h3>
+	    <p>Suunnittele tietotekniikkaan pohjautuva digitaalinen palvelu- ja ohjelmistokehitys <b>aloittaen rajapinnan suunnittelusta</b>. Kaikki <b>tietokoneohjelmat siirtävät tietoa rajapintojen läpi</b>. Rajapintoihin pohjautuvassa taloudessa (engl. API Economy) on tavoitteena palvella rajapintojen avulla sidosryhmiä sähköisesti mahdollisimman hyvin sekä organisaation sisä- että ulkopuolella. Siinä rajapinta nostetaan digitaalisen toiminnan keskiöön ja se nähdään tapana palvella digitaalisesti mahdollisimman hyvin. </p>
+	    <div id="fokus">
+	    Toimivat rajapinnat ovat edellytys digitaalisten ekosysteemien luomiselle ja skaalaamiselle. 
+	    </div>
+	    <p>Rajapinnat tuovat digitaalisille palveluille lisäarvoa ja mahdollistavat toiminnan ketteryyden. Varmista, että rajapinnalla on riittävä palvelulupaus (engl. Service-Level Agreement, SLA) ja laita palvelulupaus julkisesti nähtäville. Rajapintapalvelun kannalta on tärkeää, että sen tarjoama rajapinta sekä toiminnallisesti luotettava että tietoturvallinen. Kehittäjille pitää tarjota riittävä luotettavuus rajapinnan toiminnalle ja olemassaololle, jotta kehittäjät kiinnostuvat rajapinnasta.</p>
+
+	    <p class="comment">
+	    Aiemmin oli tärkeää luoda organisaatiolle internetsivut. Vuosien aikana päätelaitteiden (tietokoneet, kännykät, tabletit, jääkaapit, stereot, nettitelevisiot) määrä ja erilaiset ominaisuudet monipuolistuvat. Nykyään on tärkeää tarjota mahdollisimman hyvä & avoin rajapinta, jonka päälle sidosryhmät voivat rakentaa erilaisia käyttöliittymiä & käyttökokemuksia. Sidosryhmät voivat jalostaa rajapinnan tarjoamaa tietoa mitä erilaisimmin tavoin. Toimivan rajapinnan avulla teknologian ja toimintaympäristön muutoksiin on helpompi reagoida nopeammin.
+	    
+	    </p>
+
+	    <h3>2. Suosi avoimuutta</h3>
+
+	    <p><b>Avoimuus tuottaa tutkitusti parempaa laatua nopeammin</b>. Avoimuuden avulla palvellaan paremmin ja  ketterämmin. Sisällön avoin lisenssi mahdollistaa innovoinnin ja uudelleenkäytön myös liiketoiminnassa. Avoin rajapinta tekee sen takana olevan sisällön käytöstä helpompaa. Sisällytä tietojärjestelmähankintoihin avoin rajapinta aina kun mahdollista. Katso avoimen rajapinnan määritelmä osoitteesta: <a href="http://avoinrajapinta.fi">http://avoinrajapinta.fi.</a></p>
+
+
+<h3>3. Tee käyttöönotosta mahdollisimman helppoa</h3>
+
+<p>Laatu tarkoittaa myös hyvää saavutettavuutta. Rajapinnan kohdalla sillä tarkoitetaan sekä helppoa löydettävyyttä että käytettävyyttä. <b>Laadukkaan rajapinnan käytön oppii mahdollisimman nopeasti</b>. Hyvällä rajapinnalla on <b>hyvä ajantasainen dokumentaatio</b>, jonka löytää helposti. Hyvässä dokumentaatiossa on myös <b>runsaasti tapaus- ja koodiesimerkkejä rajapinnan hyödyntämisestä</b>. </p>
+
+<div id="fokus">Käytä kehittäjäportaalia kokoamaan materiaali helposti saavutettavaksi, mielekkääksi kokonaisuudeksi.</div>
+
+<p>Muita <a href="http://apisuomi.fi/2014/06/6-tapaa-houkutella-kehittajia/">keinoja parantaa kehittäjäkokemusta</a> ovat muun muassa kehitysympäristöt, rajapintaluettelot, automatisoitu API-avaimien luominen (käytön seurantaa varten) sekä <b>palautekanava rajapinnan omistajan ja kehittäjän välillä</b>. Palautekanavaksi suositellaan jotain avointa, viestit arkistoivaa foorumia. Käytä kehittäjäportaalia kokoamaan materiaali helposti saavutettavaksi, mielekkääksi kokonaisuudeksi. Edellä mainitut asiat sisältävästä kokonaisuudesta käytetään nimeä rajapintapalvelu. Tue rajapinnan päälle rakentavaa kehittäjää eri tavoin mahdollisimman kattavasti. Esimerkiksi puhelinpalvelu (arkisin kello 9-16), wiki ja sähköposti (alle 3 päivän vastaustakuulla) ovat hyviä tapoja tukea ja huokutella kehittäjiä..</p> 
+
+
+<p class="comment">Uusi käyttäjä pystyy ottamaan parhaimmat rajapintapalvelut käyttöön alle viidessä (5) minuutissa. Rajapinnat on luotettavia (ei käyttökatkoja) ja niiden kehitys/olemassa olo on avattu vuosiksi eteenpäin. Yksi suurimmista ongelmista rajapinnoissa on edelleen se, että niiden käyttöönotto kokeilemisen avulla vie aikaa, kun niitä käsittelevä dokumentaatio on puutteellista. Hyvässä dokumentaatiossa tarjotaan eri tarpeisiin valmiita ja toimivia esimerkki-koodeja rajapintakyselyihin (esimerkiksi Python & javascript), joita voi sitten lähteä kehittämään eteenpäin, eikä pyörää tarvitse keksiä uudestaan.</h3>
+
+<h3>4. Mittaa, opi palautteesta ja iteroi</h3>
+
+<p>Sitä saat, mitä mittaat. <b>Rajapinnan käytön mittaaminen on palautetta, josta rajapinnan tarjoajan kannattaa oppia jatkuvasti</b>. Palaute mahdollistaa iteraation, jolla tarkoitetaan <b>rajapinnan jatkuvaa kehittämistä pienin ja helposti hallittavin askelin</b>. Muista kuitenkin rajapinnan versiointi tarvitaessa.</p> 
+<div id="fokus">Rajapinnan kehityksessä kannattaa pyrkiä jatkuvaan yhteistyöhön sen asiakkaiden kanssa.</div>
+<p>Vain siten tiedät, mitä tarvitaan, etkä tee turhaa työtä. Mieti myös ulkoisten rajapinnan toimintaa testaavien työkalujen hyödyntämistä, joiden avulla ymmärrät muiden käyttäjäkokemusta paremmin.</p>
+
+<p class="comment">Rajapinnan käytön mittaaminen on tärkeä osa sen suunnittelua. Käytännössä voit seuraata mitä rajapintaa käytetetään 
+(esimerkiksi IP-osoite, API-avain, käyttäjän tunnistus) ja koska (päivämäärä, kellonaika) ja mitä tietoa rajapinnan kautta käytetään ja millä tavoin.</p>
+
+<h3>5. Tee yhteistyötä muiden kanssa</h3>
+<p>Monella taholla voi olla samankaltaisia rajapintatarpeita. Selvitä yhteistyön mahdollisuus. Esimerkiksi 6Aika-kaupungit (Helsinki, Espoo, Vantaa, Tampere, Turku ja Oulu) ovat suunnitelleet rajapintoja yhdessä sen sijaan, että jokainen niistä tekisi työn itsenäisesti. Tekemällä yhteistyötä avoimesti myös kehittäjäyhteisön kanssa saadaan parempi lopputulos.</p>
+
+<p class="comment">Rajapinnan takana oleva informaatio on harvoin täydellistä. Nopein tapa parantaa sen laatua on yhteisön antama palaute. Yhteisöt voivat auttaa myös luomalla koodiesimerkkejä, jotka puolestaan helpottavat rajapinnan käyttöönottoa. Hyvien rajapintojen ympärille muodostuu elävä ja monipuolinen, kaikkia hyödyttävä ja auttava ekosysteemi.</p>
+
+
+<h3>6. Toteuta johdonmukaisesti</h3>
+
+<p><b>Rajapinnat tehdään johdonmukaisesti toteuttajasta ja toteutustavasta riippumatta</b>. Niissä käytetään samoja suunnittelumalleja, mutta niihin jätetään myös liikkumatilaa. Kaiken kattava standardointi on mahdottomuus. Perusteelliset monen sadan sivun vaatimusmäärittelyt ovat yleensä jo vahentuneita valmistuessaan. Kannattaa pyrkiä siihen, että rajapinnat toimivat yhdenmukaisesti. Julkisen sektorin avointen rajapintojen sisältö tulee tarjota yhden lisenssin alla. Myös rajapinnan käyttöehdoissa pyritään yhdenmukaisuuteen. Käytä kansainvälisiä standardeja aina kun mahdollista. Standardit auttavat harmonisoinnissa ja helpottavat hyödyntämistä.</p>
+
+
+<h3>7. Tee tarkoituksenmukaisia rajapintoja</h3>
+
+<p><b>Hyvä rajapinta vastaa tiettyyn tarpeeseen</b>. <b>Rajapinnalla tulee olla julkisesti suunniteltu ja julkaistu elinkaari</b>. Rajapinta suunnitellaan, toteutetaan, hyödynnetään ja lopulta poistetaan käytöstä. Rajapinta on osa tämän päivän käyttöliittymäsuunnittelua, jossa huomioidaan myös sovellukset ihmisten rinnalla. Rakenna tarkkaan rajattuja, käytännöllisiä ja helposti käyttöönotettavia rajapintoja. Yksi hyvä mittari rajapinnan laadulle on se, kuinka nopeasti ja helposti sen pystyy ottamaan käyttöön.</p>
+
+<p class="comment">Julkaise rajapinnan dokumentaatiossa sen suunniteltu elinkaari (tulevaisuuden päivitykset, versiot jne.) ja päivitä suunnitelmaa säännöllisesti.</p>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#about-us-->
+
+  <section id="team">
+    <div class="container">
+      <div class="row">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+          <h2>Kontribuoijat</h2>
+          <p>API-manifestin tuottamiseen on osallistunut useat niin julkiselta kuin yksityiseltäkin sektorilta.</p>
+        </div>
+      </div>
+      <div class="team-members">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                <h3>Jarkko Moilanen<br/><span>Opetus- ja kulttuuriministeriö, API:Suomi -yhteisön perustaja & APItalisti</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
+	      <div class="member-info">
+                <h3>Mika Honkanen</br><span>Open Knowledge Finland, Open API työryhmän vetäjä & APItalisti</span></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">
+              <div class="member-info">
+                <h3>Jukka Aaltonen<br/><span>IT-specialist</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
+              <div class="member-info">
+                <h3>Ville Peltola<br/><span>Teknologiateollisuus</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                <h3>Aapo Rista<br/><span>Forum Virium Helsinki, 6Aika-rajapinnat</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
+              <div class="member-info">
+                <h3>Annukka Varteva<br/><span>Forum Virium Helsinki, 6Aika-rajapinnat</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">
+              <div class="member-info">
+                <h3>Matti Kinnunen<br/><span>Codento Oy ja Open Knowledge Finland, järjestelmäarkkitehti</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
+              <div class="member-info">
+                <h3>Teemu Ropponen<br/><span>Open Knowledge Finland</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                <h3>Jani Karhunen<br/><span>Orchid Bits, järjestelmäarkkitehti ja web-kehittäjä</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
+              <div class="member-info">
+                <h3>Mikko Kolehmainen<br/><span>Gofore Oy</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">
+              <div class="member-info">
+                <h3>Antti Poikola<br/><span>Open Knowledge Finland</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
+              <div class="member-info">
+                <h3>Eero Konttaniemi<br/><span>Väestörekisterikeskus, Kansallinen palveluväylä</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                <h3>Kimmo Mäkinen<br/><span>Valtiovarainministeriö, JulkICT</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
+              <div class="member-info">
+                <h3>Arvi Leino<br/><span>Turun kaupunki, 6Aika Avoin data</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">
+              <div class="member-info">
+                <h3>Janne Viskari<br/><span>Väestörekisterikeskus</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
+              <div class="member-info">
+                <h3>Samuel Rinnetmäki<br/><span>Open Knowledge Finland</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                 <h3>Tuula Pääkkönen</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+                 <h3>Karri Niemelä<br/><span>BeAn Solutions</span></h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>            
+    </div>
+  </section><!--/#team-->
+
+  <section id="contact">
+    <div id="contact-us" class="parallax">
+      <div class="container">
+        <div class="row">
+          <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <h2>Yhteystiedot</h2>
+            <p>API-manifestin kirjoittamiseen on osallistunut monia ihmisiä niin julkiselta kuin yksityiseltäkin sektorilta. Liity sinäkin mukaan kontribuoimalla muutosehdotuksen Githubissa. Voit myös liittyä mukaan keskusteluun API:Suomi Facebook -ryhmässä. </p>
+          </div>
+        </div>
+        <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+          <div class="row">
+            <div class="col-sm-6">
+                 <ul class="address">
+                  <li><span> Facebook:</span> <a style="color:#f35d3a" href="https://www.facebook.com/groups/apisuomi/">API:Suomi FB-ryhmä</a></li>
+		  <li><span> Github:</span> <a style="color:#f35d3a" href="https://github.com/apisuomi/manifesti">API-manifesti Githubissa</a></li>
+                  <li><span> Website:</span> <a style="color:#f35d3a" href="http://apisuomi.fi">apisuomi.fi</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+              <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+		            <a class="twitter-timeline"  href="https://twitter.com/hashtag/apimanifesti" data-widget-id="701077159788548097">#apimanifesti Tweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+              </div>                            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>        
+  </section><!--/#contact-->
+  <footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="container text-center">
+        <div class="footer-logo">
+	  <a href="http://apisuomi.fi"><img src="http://apisuomi.fi/wp-content/uploads/2014/06/apisuomi-small-round.png"/></>
+        </div>
+        <div class="social-icons">
+          <ul>
+            <li><a class="twitter" href="http://twitteri.com/apisuomi"><i class="fa fa-twitter"></i></a></li> 
+            <li><a class="facebook" href="https://www.facebook.com/groups/apisuomi/"><i class="fa fa-facebook"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>&copy; 2016 API:Suomi community | content <a href=https://creativecommons.org/licenses/by/4.0/"">license CC BY 4.0.</a></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-right">Crafted by <a href="http://designscrazed.org/">Allie</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/mousescroll.js"></script>
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+  <script type="text/javascript" src="js/jquery.countTo.js"></script>
+  <script type="text/javascript" src="js/lightbox.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39303944-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
